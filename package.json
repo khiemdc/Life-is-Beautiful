@@ -1,0 +1,17 @@
+{
+  "name": "just-go-master",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A team project with Khiem, Aaron & Kevin at GW bootcamp",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "mongoose": "^4.10.8"
+  }
+}

@@ -1,0 +1,98 @@
+<nav>
+<div class='container'>
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo">Life is Beautiful</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/">Logout</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="/">Logout</a></li>
+          </ul>
+        </div>
+     </div>
+  </nav>
+<br>
+<br>
+<br>
+<body id="cityBG">
+    <div class="container">
+        <h1 id="cityTitle">Choose a State</h1>
+        <div class="row">
+        <!-- New York -->
+          <div class="col s4">
+            <div class="card small">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="assets/images/cards/newyorkcity.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">New York<i class="material-icons right">more_vert</i></span>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">New York<i class="material-icons right">close</i></span>
+                    <p class="city-description">New York City is known for its fast-paced, around-the-clock lifestyle, which may be overwhelming for newcomers. Known as "the city that never sleeps," this relentless metropolis draws those seeking to advance their careers and push their limits. People come to New York to pursue their dreams, achieve a better life and test the adage "if you can make it here, you can make it anywhere."</p>
+                    <a href="/newyork"><p id="newyork">Select</p></a>
+                </div>
+             </div>
+            </div>
+            <!-- Florida -->
+            <div class="col s4">
+                <div class="card small">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="assets/images/cards/florida.jpg">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Florida<i class="material-icons right">more_vert</i></span>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Florida<i class="material-icons right">close</i></span>
+                        <p class="city-description">Warm temperatures year-round, award-winning beaches. Flodia that's home to seven of the world's top theme parks, and welcomes around 60 million travelers each year, making it one of the most popular vacation destinations in America.</p>
+                        <a href="/Florida"><p id="florida">Select</p></a>
+                    </div>
+                </div>
+            </div>
+            <!-- California -->
+            <div class="col s4">
+            <div class="card small">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="assets/images/cards/california.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">California<i class="material-icons right">more_vert</i></span>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">California<i class="material-icons right">close</i></span>
+                    <p class="city-description">California is a diverse area with an innovative spirit. San Jose City's proximity to other tech headquarters in Silicon Valley, including Google in Mountain View and Apple in Cupertino, cements California's position in the tech hub.</p>
+                    <a href="/California"><p id="california">Select</p></a>
+                </div>
+            </div>
+        </div>
+
+
+        
+
+
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function() {
+           $('#newyork').click(function(){
+                var city = "New York";
+                localStorage.setItem('city', city);
+            }); 
+
+           $('#california').click(function(){
+                var city = "California";
+                localStorage.setItem('city', city);
+            }); 
+
+           $('#florida').click(function(){
+                var city = "Florida";
+                localStorage.setItem('city', city);
+            }); 
+        });
+    </script>
+    
+</body>
