@@ -1,5 +1,5 @@
 {
-  "name": "just-go-master",
+  "name": "life-is-beautiful",
   "version": "1.0.0",
   "private": true,
   "description": "A team project with Khiem, Aaron & Kevin at GW bootcamp",
@@ -13,5 +13,14 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "mongoose": "^4.10.8"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khiemdc/Life-is-Beautiful.git"
+  },
+  "bugs": {
+    "url": "https://github.com/khiemdc/Life-is-Beautiful/issues"
+  },
+  "homepage": "https://github.com/khiemdc/Life-is-Beautiful#readme"
 }
