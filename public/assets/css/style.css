@@ -1,11 +1,7 @@
 
 nav {
     background-color:rgba(43, 187, 173, 0.7);
-    /*opacity: 0.7;*/
-}
-
-.brand-logo {
-    font-family: 'Anton', sans-serif;
+    opacity: 0.7;
 }
 
 .signupFormIcon {
@@ -38,7 +34,8 @@ body {
     color: white;
     font-family: 'Roboto', sans-serif;
     font-size: 3em;
-    margin-top: -2%;
+    margin-top: 2%;
+    margin-bottom: 6%;
     z-index: 9990;
 }
 
@@ -89,7 +86,8 @@ body {
 }
 
 #cityBG {
-    background: url("../images/bgpics/norwaybw.jpg")no-repeat center center fixed;
+    background: url("../images/bgpics/norwaybw.jpg");
+    background-repeat: no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -99,11 +97,6 @@ body {
 .city-description {
     color: gray;
 }
-
-.brand-logo {
-    padding-left:15px;
-}
-
 
 
 h5 {
