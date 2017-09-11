@@ -9,36 +9,40 @@
 <fieldset>
 	<legend>Please complete</legend>
 	<label>
-	Name:
-	<input type="text" name="name" size="30" maxlength="100">
+	First Name:
+	<input type="text" name="fname" Placeholder="First Name" size="30" maxlength="100">
 	</label>
-	<br />
+
+	<label>
+	Last Name:
+	<input type="text" name="lname" Placeholder="Last Name" size="30" maxlength="100">
+	</label>
+
 	<label>
 	Email:
 	<input type="email" name="email" size="30" maxlength="100">
 	</label>
 	<label>
-	City you currently live:
+	<!-- City you currently live:
 	<input type="city" name="city" size="30" maxlength="100">
 	</label>
 	<label>
 	Current Job:
 	<input type="job" name="job" size="30" maxlength="100">
 	</label>
-	<br />
+	<br /> -->
 </fieldset>
 <br />
 
 <fieldset>
 	<legend>Information</legend>
 	<p>
-		<label for="hear about">How you hear about us</label>
-		<select name="referrer" id="hear about">
-			<option value="google">Google</option>
-			<option value="GW Coding BootCamp">GW Coding BootCamp</option>
-			<option value="Friend">Friend</option>
-			<option value="Other">Other</option>
-		</select>
+		<label for="Moving From">I'm moving From</label>
+		<input type="text" name="MovingFrom" Placeholder="City, State" size="30" maxlength="100">
+	</p>
+	<p>
+		<label for="Moving To">I want to moving to</label>
+		<input type="text" name="MovingTo" Placeholder="City, State" size="30" maxlength="100">
 	</p>
 	<p>
 		<label for="hear about">What is your current salary</label>
@@ -60,14 +64,7 @@
 			<option value="5">5 or more</option>
 		</select>
 	</p>
-	<p>
-		<label for="hear about">Do you know anyone in this new city?</label>
-		<select name="household" id="household">
-			<option value="Yes">Yes</option>
-			<option value="No">No</option>
-			
-		</select>
-	</p>
+	
 </fieldset>
 </form>
 </body>
