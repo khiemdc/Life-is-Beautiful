@@ -123,3 +123,11 @@ input, label {
     background-color: #F2871B;
 }
 
+#formBG {
+    background: url("../images/");
+    background-repeat: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

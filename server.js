@@ -18,7 +18,7 @@ app.use(express.static(process.cwd() + '/public'));
 var databaseUrl = 'userDB';
 var collections = ['users'];
 
-var routes = require('./controllers/controller.js');
+var routes = require('./config/controller.js');
 app.use('/', routes);
 
 
