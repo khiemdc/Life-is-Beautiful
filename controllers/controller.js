@@ -37,6 +37,7 @@ router.get('/city', function(req, res, body) {
 router.get('/Newyork', function(req, res, body) {
     console.log(req);
     res.render('form');
+    var city= Newyork
 });
 
 router.get('/California', function(req, res, body) {
@@ -47,9 +48,12 @@ router.get('/Florida', function(req, res, body) {
     res.render('form');
 });
 
-router.get('/friends', function(req,res, body){
+router.get('/Washington', function(req,res, body){
     res.render('friends');
 });
+
+router.get('/Chicago', function(req,res, body){
+    res.render('friends');
 
 
 
