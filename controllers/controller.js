@@ -35,7 +35,7 @@ router.get('/city', function(req, res, body) {
 });
 
 router.get('/Newyork', function(req, res, body) {
-    console.log(req.params);
+    console.log(req);
     res.render('form');
 });
 
