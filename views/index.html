@@ -1,4 +1,12 @@
-<form action="www.google.com" method="get">
+<DOCTYPE! html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Please Complete to Join!</title>
+</head>
+
+<body>
+<form id="form" action="api/new, server.js" method="post">
 <fieldset>
 	<legend>Please complete</legend>
 	<label>
@@ -16,30 +24,22 @@
 	<input type="email" name="email" size="30" maxlength="100">
 	</label>
 	<label>
-	<!-- City you currently live:
-	<input type="city" name="city" size="30" maxlength="100">
-	</label>
-	<label>
-	Current Job:
-	<input type="job" name="job" size="30" maxlength="100">
-	</label>
-	<br /> -->
 </fieldset>
 <br />
 
 <fieldset>
 	<legend>Information</legend>
 	<p>
-		<label for="Moving From">I'm moving From</label>
+		<label id="movingFrom" for= "Moving From">I'm moving From</label>
 		<input type="text" name="MovingFrom" Placeholder="City, State" size="30" maxlength="100">
 	</p>
 	<p>
-		<label for="Moving To">I want to moving to</label>
-		<input type="text" name="MovingTo" Placeholder="City, State" size="30" maxlength="100">
+		<label id="movingTo" for="Moving To">I want to moving to</label>
+		<input type="text" name="MovingTo" Placeholder="City, State" size="30" maxlength="100" id="thecity">
 	</p>
 	<p>
 		<label for="hear about">What is your current salary</label>
-		<select name="salary" id="current salary">
+		<select name="salary" id="salary">
 			<option value="0">0 (none)</option>
 			<option value="30,000 - 50,000">30,000 - 50,000</option>
 			<option value="50,000 - 70,000">50,000 - 70,000</option>
@@ -56,10 +56,15 @@
 			<option value="4">4</option>
 			<option value="5">5 or more</option>
 		</select>
+		<br>
+		<br>
+		<input type="submit" value="submit">
+		  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="../public/client.js"></script>
+	<script type="text/javascript"></script>
+
 	</p>
-	
 </fieldset>
 </form>
-
-
-
+</body>
+</html>

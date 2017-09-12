@@ -54,7 +54,7 @@ router.get('/Washington', function(req,res, body){
 
 router.get('/Chicago', function(req,res, body){
     res.render('friends');
-
+});
 
 
 router.post('/signin', function(req, res, body) {
