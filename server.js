@@ -3,7 +3,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var request = require('request');
 var exphbs = require('express-handlebars');
-
+var db = require('./models');
 var app = express();
 
 //Configure the app======================================
@@ -18,6 +18,10 @@ app.use(express.static(process.cwd() + '/public'));
 var databaseUrl = 'userDB';
 var collections = ['users'];
 
+db.sequelize.sync().then(function() {
+
+
+
 var routes = require('./controllers/controller.js');
 app.use('/', routes);
 
@@ -28,4 +32,5 @@ app.listen(PORT, function() {
     console.log('Listening on: ' + PORT);
 });
 
+});
 
