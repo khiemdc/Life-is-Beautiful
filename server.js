@@ -18,7 +18,7 @@ app.use(express.static(process.cwd() + '/public'));
 var databaseUrl = 'userDB';
 var collections = ['users'];
 
-db.sequelize.sync().then(function() {
+db.sequelize.sync({force: true}).then(function() {
 
 
 
