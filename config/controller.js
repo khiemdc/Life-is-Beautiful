@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var router = express.Router();
 var request = require('request');
+var db = require('../models');
 
 /*Obtains Athorization for API here
 var authorize = {
@@ -35,8 +36,9 @@ router.get('/city', function(req, res, body) {
 });
 
 router.get('/Newyork', function(req, res, body) {
-    console.log(req.params);
+    console.log(req);
     res.render('form');
+    var city= Newyork
 });
 
 router.get('/California', function(req, res, body) {
@@ -51,6 +53,9 @@ router.get('/WashingtonDC', function(req,res, body){
     res.render('form');
 });
 
+router.get('/Chicago', function(req,res, body){
+    res.render('friends');
+});
 
 
 router.post('/signin', function(req, res, body) {
@@ -64,5 +69,29 @@ router.post('/signin', function(req, res, body) {
 router.get('/signup', function(req,res, body){
     res.render('signup');
 });
+
+
+router.get("/api/user", function(req, res) {
+    // findAll returns all entries for a table when used with no options
+db.User.create({user: 'this',
+
+    name: 'DataTypes.STRING',
+
+    email: 'DataTypes.STRING',
+
+    password: 'DataTypes.STRING',
+
+    movingTo: 'DataTypes.STRING',
+
+    movingFrom: 'DataTypes.STRING',
+
+    salary: 'DataTypes.STRING',
+
+    household: 5,
+
+    }).then(function(res) {
+ console.log(res)
+    });
+  });
 
 module.exports = router;

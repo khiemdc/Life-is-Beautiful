@@ -98,7 +98,7 @@
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">Washington DC<i class="material-icons right">close</i></span>
                         <p class="city-description">Warm temperatures year-round, award-winning beaches. Flodia that's home to seven of the world's top theme parks, and welcomes around 60 million travelers each year, making it one of the most popular vacation destinations in America.</p>
-                        <a href="/WashingtonDC"><p id="washingtonDC">Select</p></a>
+                        <a href="/WashingtonDC"><p id="washingtondc">Select</p></a>
                     </div>
                 </div>
             </div>
@@ -125,16 +125,18 @@
                 localStorage.setItem('city', city);
                 citysearch(city);
             }); 
-<<<<<<< HEAD
-           $('#chicago').click(function(){
-                var city = "Chicago";
+
+           $('#Chicago').click(function(){
+                city = "Chicago";
                 localStorage.setItem('city', city);
+                citysearch(city);
             }); 
-           $('#washingtonDC').click(function(){
-                var city = "WashingtonDC";
+
+           $('#Washington,DC').click(function(){
+                city = "WashingtonDC";
                 localStorage.setItem('city', city);
+                citysearch(city);
             }); 
-=======
 
            function citysearch(city){
             var queryURL = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&units=imperial&appid=6aec4391886be38edb554739debf8733";
@@ -155,7 +157,6 @@
 
         }
 
->>>>>>> bc5ccd2f6685eb72b0cb30512d4f6daf2e3c322b
         });
     </script>
     

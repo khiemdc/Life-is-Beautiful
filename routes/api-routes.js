@@ -7,7 +7,10 @@
 
 // Requiring our model
 var db = require("../models");
+<<<<<<< HEAD
 var connection = require("../config/connection.js");
+=======
+>>>>>>> bc5ccd2f6685eb72b0cb30512d4f6daf2e3c322b
 
 // Routes
 // =============================================================
@@ -62,4 +65,8 @@ db.User.create({user: 'this',
   app.put("/api/user", function(req, res) {
 
   });
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> bc5ccd2f6685eb72b0cb30512d4f6daf2e3c322b
