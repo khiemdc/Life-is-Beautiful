@@ -32,5 +32,10 @@ app.listen(PORT, function() {
     console.log('Listening on: ' + PORT);
 });
 
+//console.log(db.Users)
+
+
+
 });
+
 
