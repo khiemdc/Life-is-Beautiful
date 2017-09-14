@@ -98,7 +98,7 @@
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">Washington DC<i class="material-icons right">close</i></span>
                         <p class="city-description">Warm temperatures year-round, award-winning beaches. Flodia that's home to seven of the world's top theme parks, and welcomes around 60 million travelers each year, making it one of the most popular vacation destinations in America.</p>
-                        <a href="/WashingtonDC"><p id="washingtondc">Select</p></a>
+                        <a href="/WashingtonDC"><p id="washingtonDC">Select</p></a>
                     </div>
                 </div>
             </div>
@@ -119,6 +119,14 @@
 
            $('#florida').click(function(){
                 var city = "Florida";
+                localStorage.setItem('city', city);
+            }); 
+           $('#chicago').click(function(){
+                var city = "Chicago";
+                localStorage.setItem('city', city);
+            }); 
+           $('#washingtonDC').click(function(){
+                var city = "WashingtonDC";
                 localStorage.setItem('city', city);
             }); 
         });

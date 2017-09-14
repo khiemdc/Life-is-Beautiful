@@ -47,8 +47,8 @@ router.get('/Florida', function(req, res, body) {
     res.render('form');
 });
 
-router.get('/friends', function(req,res, body){
-    res.render('friends');
+router.get('/WashingtonDC', function(req,res, body){
+    res.render('form');
 });
 
 

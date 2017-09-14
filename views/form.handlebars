@@ -1,120 +1,363 @@
-{{!-- Navigation Bar --}}
 <nav>
-	<div class='container'>
-	    <div class="nav-wrapper">
-	      <a href="/" class="brand-logo">Life is Beautiful</a>
-	      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-	      <ul class="right hide-on-med-and-down">
-	        <li><a href="/">Logout</a></li>
-	      </ul>
-	      <ul class="side-nav" id="mobile-demo">
-	        <li><a href="/">Logout</a></li>
-	      </ul>
-	    </div>
-	 </div>
+    <div class='container'>
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo">Life is Beautiful</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/">Logout</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="/">Logout</a></li>
+          </ul>
+        </div>
+     </div>
   </nav>
 <br>
 <br>
 <br>
 <body id="formBG">
 <div class = "container">
-<div class="row" style="text-align:center">
-<h2 id="formTitle">tell us about your plan!</h2>
-</div>
-	<div class = 'row'>
-		<form action="www.google.com" method="get">
-<fieldset>
-	<legend>Please complete</legend>
-	<label>
-	Name:
-	<input type="text" name="name" size="30" maxlength="100">
-	</label>
-	<br />
-	<label>
-	Email:
-	<input type="email" name="email" size="30" maxlength="100">
-	</label>
-	<label>
-	City you currently live:
-	<input type="city" name="city" size="30" maxlength="100">
-	</label>
-	<label>
-	Current Job:
-	<input type="job" name="job" size="30" maxlength="100">
-	</label>
-	<br />
-</fieldset>
-<br />
+<p>Please enter a city in the search bar for more information.</p>
+<nav class='transparent'>
+  <div class="nav-wrapper">
+    <form id='search-form'>
+      <div class="input-field">
+        <input id="search" placeholder='Enter the city' name='citySearch' type='search' autocomplete='off' required>
+        <label for="search"><i class="material-icons">search</i></label>
+      </div>
+<!-- Dropdown Trigger -->
+      <a class="dropdown-button" href="#" data-activates="dropdown1"  data-beloworigin="true"><i class="material-icons ">reorder</i></a>
+    </form>
+  </div>
+</nav>
 
-<fieldset>
-	<legend>Information</legend>
-	<p>
-		<label for="hear about">How you hear about us</label>
-		<select name="referrer" id="hear about">
-			<option value="google">Google</option>
-			<option value="GW Coding BootCamp">GW Coding BootCamp</option>
-			<option value="Friend">Friend</option>
-			<option value="Other">Other</option>
-		</select>
-	</p>
-	<p>
-		<label for="hear about">What is your current salary</label>
-		<select name="salary" id="current salary">
-			<option value="0">0 (none)</option>
-			<option value="30,000 - 50,000">30,000 - 50,000</option>
-			<option value="50,000 - 70,000">50,000 - 70,000</option>
-			<option value="70,000 - 90,000">70,000 - 90,000</option>
-			<option value="90,000 - 100,000+">90,000 - 100,000+</option>
-		</select>
-	</p>
-	<p>
-		<label for="hear about">How Many in your household</label>
-		<select name="household" id="household">
-			<option value="1">1 (Just You)</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			<option value="5">5 or more</option>
-		</select>
-	</p>
-	<p>
-		<label for="hear about">Do you know anyone in this new city?</label>
-		<select name="household" id="household">
-			<option value="Yes">Yes</option>
-			<option value="No">No</option>
-			
-		</select>
-	</p>
-</fieldset>
-</form>
-		   	<div class = "row" style="text-align:center">
-		   		<button class="btn waves-effect waves-light" id="formSubmit" type="submit" name="action">Submit
-    				<i class="material-icons right">send</i>
-  				</button>
-  			</div>
-		</form>
-	</div>
-</div>
 
-<!-- For dropdown options -->
+{{!-- Main content --}}
+<div class = 'row'>
+	<div class='col s12' id = 'mainContent'>   
+        {{!-- Current city --}}
+        <div class = 'row center-align'>
+            <h3>Current city: <span id = 'currentCity'></span></h3>
+        </div>
+        <div class = 'row'>
+            <div class = 'col s8 whiteBorder center-align'>
+                <div class = 'row infoTitle'>
+                    <span class="card-title">Summary</span>
+                </div>
+                <div class = 'row center-align'>
+                    <div class = 'card-panel white center-align roundedCorners'>
+                        <div class = 'row'>
+                        <p class="black-text cardText" id = 'citySummary'></p>
+                        </div>
+                    </div>
+                </div>
+                       
+
+            <div style="text-align:center">
+            <h5>Tell us about your plan!</h5>
+            </div>
+            <div class = 'row'>
+            <form action="/api/User" method="post">
+                <fieldset>
+                <legend>Please complete</legend>
+                    <label>
+                    Name:
+                    <input type="text" name="name" size="30" maxlength="100">
+                    </label>
+                    <br />
+                    <label>
+                    Email:
+                    <input type="email" name="email" size="30" maxlength="100">
+                    </label>
+                    <label>
+                    City you currently live:
+                    <input type="city" name="city" size="30" maxlength="100">
+                    </label>
+                    <label>
+                    Current Job:
+                    <input type="job" name="job" size="30" maxlength="100">
+                    </label>
+                <br />
+                </fieldset>
+                <br />
+
+                <fieldset>
+                <legend>Information</legend>
+                <p>
+                <label for="hear about">How you hear about us</label>
+                <select name="referrer" id="hear about">
+                    <option value="google">Google</option>
+                    <option value="GW Coding BootCamp">GW Coding BootCamp</option>
+                    <option value="Friend">Friend</option>
+                    <option value="Other">Other</option>
+                </select>
+                </p>
+                <p>
+                <label for="hear about">What is your current salary</label>
+                <select name="salary" id="current salary">
+                    <option value="0">0 (none)</option>
+                    <option value="30,000 - 50,000">30,000 - 50,000</option>
+                    <option value="50,000 - 70,000">50,000 - 70,000</option>
+                    <option value="70,000 - 90,000">70,000 - 90,000</option>
+                    <option value="90,000 - 100,000+">90,000 - 100,000+</option>
+                </select>
+                </p>
+                <p>
+                <label for="hear about">How Many in your household</label>
+                <select name="household" id="household">
+                    <option value="1">1 (Just You)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 or more</option>
+                </select>
+                </p>
+                <p>
+                <label for="hear about">Do you know anyone in this new city?</label>
+                <select name="household" id="household">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+            
+                </select>
+                </p>
+                </fieldset>
+                <br>
+                <div class = "row" style="text-align:center">
+                    <button class="btn waves-effect waves-light" id="formSubmit" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                    </button>
+                </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Weather Cards -->
+        <div class = 'col s4 center-align'>
+            <div class = 'row infoTitle'></div>
+                <div class = 'row'>
+                    <div class = 'card-panel white center-align roundedCorners'>
+                        <span class="card-subTitle black-text">Current Weather</span>
+                        <p class="black-text cardText" id = 'currentWeatherInfo'>--&deg; F
+                        </p>
+                    </div>
+                </div>
+                <div class = 'row'>
+                    <div class = 'card-panel white center-align roundedCorners'>
+                    <span class="card-subTitle black-text">Annual Weather</span>
+               
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Weather Type: <span id="weatherType"></span></p>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Number of Clear Days: <span id="clearDays"></span></p>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Number of Rainy Days: <span id="rainyDays"></span></p>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Agerage High: <span id="tempHigh"></span></p>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Average Low: <span id="tempLow"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Photos Card -->
+                <div class = 'row infoTitle'>
+                    <span class="card-title">Photo</span>
+                    </div>
+                <div class = 'card-panel white center-align roundedCorners' id = 'picture'>
+                    <p class="black-text cardText" id = 'photosInfo'></p>
+                </div>
+            </div>
+        
+            <div class = 'row'>
+            <!--City Scores -->
+            <div class = 'col s6 whiteBorder center-align'>
+                <div class = 'row infoTitle'>
+                    <span class="card-title">City Scores</span>
+                </div>
+                <div class = 'row'>
+                    <div class = 'card-panel white center-align roundedCorners'>
+                        <div class = 'row'>
+                            <div class = 'col s5 colTitles'>
+                                <p class='cardText'>City Score: <span id="cityScore"></span> </p>
+                            </div>
+                            <div class = 'col s7'>
+                                <div class="progress">
+                                    <div class="determinate" id="cityScoreDet"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s5 colTitles'>
+                                <p class='cardText'>Housing: <span id="housing"></span></p>
+                            </div>
+                            <div class = 'col s7'>
+                                <div class="progress">
+                                    <div class="determinate" id="housingDet"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s6 colTitles'>
+                                <p class='cardText'>Mass Transit: <span id="massTransit"></span></p>
+                            </div>
+                            <div class = 'col s6'>
+                                <div class="progress">
+                                    <div class="determinate" id="massTransitDet"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s5 colTitles'>
+                                <p class='cardText'>Commute: <span id="commute"></span></p>
+                            </div>
+                            <div class = 'col s7'>
+                                <div class="progress">
+                                    <div class="determinate" id="commuteDet"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s5 colTitles'>
+                                <p class='cardText'>Safety: <span id="safety"></span></p>
+                            </div>
+                            <div class = 'col s7'>
+                                <div class="progress">
+                                    <div class="determinate" id="safetyDet"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s5 colTitles'>
+                                <p class='cardText'>Education: <span id="education"></span></p>
+                            </div>
+                            <div class = 'col s7'>
+                                <div class="progress">
+                                    <div class="determinate" id="educationDet"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s5 colTitles'>
+                                <p class='cardText'>Internet Access: <span id="internetAccess"></span></p>
+                            </div>
+                            <div class = 'col s7'>
+                                <div class="progress">
+                                    <div class="determinate" id="internetDet"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s6 colTitles'>
+                                <p class='cardText'>Leisure and Culture: <span id="leisureAndCulture"></span></p>
+                            </div>
+                            <div class = 'col s6'>
+                                <div class="progress">
+                                    <div class="determinate" id="leisureDet"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s5 colTitles'>
+                                <p class='cardText'>Tolerance: <span id="tolerance"></span></p>
+                            </div>
+                            <div class = 'col s7'>
+                                <div class="progress">
+                                    <div class="determinate" id="toleranceDet"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s5 colTitles'>
+                                <p class='cardText'>Outdoors: <span id="outdoors"></span></p>
+                            </div>
+                            <div class = 'col s7'>
+                                <div class="progress">
+                                    <div class="determinate" id="outdoorDet"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class = 'col s6 colTitles'>
+                    <p class='cardText'>Cost of Living: <span id="costOfLiving"></span></p>
+                    <div class="progress">
+                     <div class="determinate" id="costOfLivingDet"></div>
+                    </div>
+                    
+                    <div class = 'row infoTitle'></div>
+                    <div class = 'card-panel white center-align roundedCorners'>
+                        
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Cost of Apples: <span id="apples"></span></p>
+                                <p>(Per Kg)</p>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Cost of Bread: <span id="bread"></span></p>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Cost of Movie Ticket: <span id="movies"></span></p>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Cost of Beer: <span id="beer"></span></p>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Cost of Cappuccino: <span id="cappuccino"></span></p>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Cost of Meal: <span id="meals"></span></p>
+                            </div>
+                        </div>
+                        <div class = 'row'>
+                            <div class = 'col s12 colTitles'>
+                                <p class='cardText' >Cost of Taxi: <span id="taxi"></span></p>
+                                <p>(Per 5km)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+     <!-- For dropdown options -->
 <script>
-	$(document).ready(function() {
-		$('select').material_select();
+    $(document).ready(function() {
+        $('select').material_select();
 
-		var city = localStorage.getItem('city');
-		
-		$('#city-input').val(city);
-		$('#city-name').html(city);
-	});
-</script>
-<!-- For Pick A Date -->
-<script>
-
-$('.datepicker').pickadate({
-    selectMonths: true, // Creates a dropdown to control month
-    selectYears: 10 // Creates a dropdown of 10 years to control year
-  });
+        var city = localStorage.getItem('city');
+        
+        $('#city-input').val(city);
+        $('#city-name').html(city);
+    });
 </script>
 
+<script src="https://cdn.rawgit.com/devbridge/jQuery-Autocomplete/master/dist/jquery.autocomplete.min.js" type="text/javascript" charset="utf-8"></script>
 
+ <script type="text/javascript" src='/assets/js/autocomplete.js'></script>
 

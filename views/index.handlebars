@@ -3,37 +3,47 @@
     <div class="container">
         <h1 id="homePageTitle">life is beautiful</h1>
         <p id="homePageText">Do your best to make the right choices!</p>
-
-        <!-- Sign-in form -->
-        <div id="modal1" class="modal">
+        <!-- Modal Structure -->
+           <div id="modal1" class="modal">
             <div class="modal-content">
                 <h4>Life is Beautiful</h4>
-                <p>Login</p>
-                <div class='row'>
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="emailLogin" type="email" class="validate">
-                                <label for="email">Email</label>
-                            </div>
-                        </div>
-                        <div class='row'>
-                            <div class="input-field col s12">
-                                <input id="passwordLogin" type="password" class="validate">
-                                <label for="password">Password</label>
-                            </div>
-                        </div>
-                        <div class='row' style='text-align:center'>
-                            <a href="/signup" class=" modal-action modal-close waves-effect btn-flat" id='signUpBtn'>Don't Have An Account?</a>
-                        </div>
-                        <div class='row' style='text-align:center'>
-                            <a href="" class=" modal-action modal-close waves-effect btn-large" id='signInBtn'>Sign In</a>
-                        </div>
+                <p>Sign in</p>
+                <div class='row' style='text-align:center'>
+                    <form class="form" method="post" action="#">
+                       <label>User name:</label>
+                       <input type="text" id="username" placeholder="Username">
+                       <label>Password:</label>
+                       <input type="password" id="password" placeholer="Password">
+                       <button type="button" class="btn-large" onclick="getInfo()">Log in</button>
                     </form>
                 </div>
+                <!-- Modal 2 Trigger -->
+                <button data-target="modal2" class="waves-effect btn-flat modal-trigger"><i class="material-icons right">play_circle_outline</i>Don't Have An Account/Sign up</button>
             </div>
+           </div>
+        
+        <!-- Modal 2 -->
+            <div id="modal2" class="modal">
+            <div class="modal-content">
+             <div class='row' style='text-align:center'>
+              <form class="form" method="post" action="#">
+                <label>Name :</label>
+                <input type="text" name="dname" id="name">
+                <label>Email :</label>
+                <input type="text" name="demail" id="email">
+                <label>Password :</label>
+                <input type="password" name="password" id="passwordres">
+                <label>Confirm Password :</label>
+                <input type="password" name="cpassword" id="cpassword">
+                <input type="button" name="register" id="register" value="Register">
+              </form>
+                <!--<button type="button" class="btn-large" onclick="postInfo()">Sign up</button> -->                   
+             </div>
+             <div class='row' style='text-align:center'>
+               <a href="/signup" class=" modal-action modal-close waves-effect btn-flat" id='signUpBtn'>Don't Have An Account?</a>
+             </div>                 
+          </div>
         </div>
-
         <!-- Modal Trigger -->
         <button data-target="modal1" class="waves-effect waves-light btn-large logInBtn modal-trigger"><i class="material-icons right">play_circle_outline</i>Get Started</button>
 
@@ -41,9 +51,13 @@
 </div>
 
 <!-- Modal Popup Script -->
+
 <script>
+
     $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal-trigger').leanModal();
   });
 </script>
+<link rel="stylesheet" type="text/css" href="/assets/css/login.css">
+<script type="text/javascript" src="/assets/js/login.js"></script>        
