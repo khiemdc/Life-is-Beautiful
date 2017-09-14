@@ -18,15 +18,9 @@ app.use(express.static(process.cwd() + '/public'));
 var databaseUrl = 'userDB';
 var collections = ['users'];
 
-<<<<<<< HEAD
-var routes = require('./config/controller.js');
-=======
 db.sequelize.sync({force: true}).then(function() {
+var routes = require('./config/controller.js');
 
-
-
-var routes = require('./controllers/controller.js');
->>>>>>> bc5ccd2f6685eb72b0cb30512d4f6daf2e3c322b
 app.use('/', routes);
 
 
