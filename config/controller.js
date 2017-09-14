@@ -67,7 +67,7 @@ router.post('/signin', function(req, res, body) {
 
 
 router.get('/signup', function(req,res, body){
-    res.render('signup');
+    res.render('signUp');
 });
 
 
