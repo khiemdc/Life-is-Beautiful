@@ -28,7 +28,7 @@
         $(document).ready(function() {
             var city;
            $('#newyork').click(function(){
-                city = "New York";
+                city = "Newyork";
                 localStorage.setItem('city', city);
                 citysearch(city);
             }); 
